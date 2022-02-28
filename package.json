@@ -1,0 +1,32 @@
+{
+  "name": "json-column-parser",
+  "version": "1.0.0",
+  "description": "JSON parser for several data sources columns",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StavPonte11/json-column-parser.git"
+  },
+  "keywords": [
+    "JSON",
+    "parser",
+    "column",
+    "hive",
+    "atlas",
+    "amundsen"
+  ],
+  "author": "Stav Ponte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StavPonte11/json-column-parser/issues"
+  },
+  "homepage": "https://github.com/StavPonte11/json-column-parser#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0"
+  }
+}

@@ -2,10 +2,10 @@ import { TestSuitsType } from '../../../common/types/testTypes.common';
 
 const hiveTestExpectations: TestSuitsType = {
 	simpleObject: '{name:string>',
-	simpleList: '[name:string>',
+	simpleList: '[string>',
 
 	multipleValuesObject: '{name:string,id:string,age:int>',
-	multipleValuesList: '[name:string,id:string,age:int>',
+	multipleValuesList: '[{name:string,id:string,age:int>>',
 	multiNested1:
 		'{name:string,id:string,is_athlete:boolean,class:{major:string,average:int>>',
 	multiNested2:

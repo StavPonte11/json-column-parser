@@ -2,10 +2,10 @@ import { TestSuitsType } from '../../common/types/testTypes.common';
 
 const hiveColumnsToTest: TestSuitsType = {
 	simpleObject: 'struct<name:string>',
-	simpleList: 'array<name:string>',
+	simpleList: 'array<string>',
 
 	multipleValuesObject: 'struct<name:string,id:string,age:int>',
-	multipleValuesList: 'array<name:string,id:string,age:int>',
+	multipleValuesList: 'array<struct<name:string,id:string,age:int>>',
 	multiNested1:
 		'struct<name:string,id:string,is_athlete:boolean,class:struct<major:string,average:int>>',
 	multiNested2:

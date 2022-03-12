@@ -27,7 +27,6 @@ export const replaceOpeningDelimiters = (columnTypeRaw: string): string => {
 };
 
 /**
- * TODO: Implement functionality
  * TODO: Add test
  * Replace the closing delimiter sign with the right closing bracket (]/})
  * @param columnTypeWithOpeningBrackets: Column type with opening brackets
@@ -36,7 +35,23 @@ export const replaceOpeningDelimiters = (columnTypeRaw: string): string => {
 export const replaceClosingDelimiter = (
 	columnTypeWithOpeningBrackets: string
 ): string => {
-	return '';
+	const openingBracketsArray: Array<string> = [];
+
+	return columnTypeWithOpeningBrackets
+		.split('') // Create array of chars
+		.map((char: string) => {
+			if (char === '[' || char === '{') {
+				openingBracketsArray.push(char); // Add to opening brackets stack
+			} else if (char === '>') {
+				// Closing bracket
+				const openingBracket = openingBracketsArray.pop();
+				// Override the current char to the closing bracket
+				char = openingBracket === '[' ? ']' : openingBracket === '{' ? '}' : '';
+			}
+
+			return char;
+		})
+		.join(''); // Join back to string
 };
 
 /**

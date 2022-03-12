@@ -5,6 +5,7 @@ export type TestSuitsType = {
 	multipleValuesList: string,
 	multiNested1: string,
 	multiNested2: string,
+	multiNested3: string,
 };
 
 export type TestExpectations = {

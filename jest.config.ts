@@ -31,7 +31,7 @@ export default {
 	// ],
 
 	// Indicates which provider should be used to instrument code for coverage
-	coverageProvider: 'v8'
+	coverageProvider: 'v8',
 
 	// A list of reporter names that Jest uses when writing coverage reports
 	// coverageReporters: [
@@ -66,9 +66,7 @@ export default {
 	// maxWorkers: "50%",
 
 	// An array of directory names to be searched recursively up from the requiring module's location
-	// moduleDirectories: [
-	//   "node_modules"
-	// ],
+	moduleDirectories: ['node_modules', 'index']
 
 	// An array of file extensions your modules use
 	// moduleFileExtensions: [

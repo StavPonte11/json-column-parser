@@ -1,5 +1,5 @@
-import { DataSources } from './enum.common';
-import { LIST_LIKE_TYPES, OBJECT_LIKE_TYPES } from './consts.common';
+import { DataSources } from '../enum.common';
+import { LIST_LIKE_TYPES, OBJECT_LIKE_TYPES } from '../consts.common';
 
 export type ParsedColumn = {
 	colName: string,

@@ -1,11 +1,11 @@
 import { DataSources } from './enum.common';
-import { SupportedType } from './type.common';
-export const OPEN_DELIMETERS_MAP = {
+import { SupportedType } from './types/type.common';
+export const OPEN_DELIMITERS_MAP = {
 	'(': ')',
 	'<': '>',
 	'[': ']'
 };
-export const CLOSE_DELIMETERS_MAP = {
+export const CLOSE_DELIMITERS_MAP = {
 	')': '(',
 	'>': '<',
 	']': '['

@@ -3,12 +3,14 @@ import { SupportedType } from './types/type.common';
 export const OPEN_DELIMITERS_MAP = {
 	'(': ')',
 	'<': '>',
-	'[': ']'
+	'[': ']',
+	'{': '}'
 };
 export const CLOSE_DELIMITERS_MAP = {
 	')': '(',
 	'>': '<',
-	']': '['
+	']': '[',
+	'}': '{'
 };
 
 const SUPPORTED_TYPES: SupportedType = {

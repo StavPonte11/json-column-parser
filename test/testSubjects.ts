@@ -11,7 +11,10 @@ const hiveColumnsToTest: TestSuitsType = {
 	multiNested2:
 		'array<struct<amount:bigint,product:struct<product_id:string,product_name:string,template:struct<code:string,currency:string>>,color:string>>',
 	multiNested3:
-		'array<struct<student:struct<name:string,id:string,subjects:array<struct<sub_name:string,sub_id:bigint>>>,supply:struct<amount:bigint,product:struct<product_id:string,product_name:string,template:struct<code:string,currency:string>>,color:string>>>'
+		'array<struct<student:struct<name:string,id:string,subjects:array<struct<sub_name:string,sub_id:bigint>>>,supply:struct<amount:bigint,product:struct<product_id:string,product_name:string,template:struct<code:string,currency:string>>,color:string>>>',
+	invalid1: 'struct<name:string',
+	invalid2: 'array<name:string,id:string>', // invalid json
+	invalid3: 'struc<name:string>'
 };
 
 export { hiveColumnsToTest };

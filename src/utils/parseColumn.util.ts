@@ -1,4 +1,8 @@
-import { JSON, ParsedColumn, RawColumn } from '../../common/types/type.common';
+import {
+	JSONType,
+	ParsedColumn,
+	RawColumn
+} from '../../common/types/type.common';
 import {
 	replaceOpeningDelimiters,
 	replaceClosingDelimiter,
@@ -34,7 +38,7 @@ const parseColumn = (column: RawColumn): ParsedColumn => {
  * @param columnType : A string representation of the column in the supported format
  * @returns The parsed column type => <struct to {}, <array to []...
  */
-const parseColumnType = (columnType: string): string | JSON => {
+export const parseColumnType = (columnType: string): string | JSONType => {
 	try {
 		return handleComplicatedColumnType(columnType);
 	} catch (error) {
@@ -47,7 +51,9 @@ const parseColumnType = (columnType: string): string | JSON => {
  * @param columnTypeRaw: The formatted column type needed to be parsed
  * @returns: A json representation of the column type
  */
-const handleComplicatedColumnType = (columnTypeRaw: string): JSON => {
+export const handleComplicatedColumnType = (
+	columnTypeRaw: string
+): JSONType => {
 	// Replace all opening brackets
 	let columnTypeToJson = replaceOpeningDelimiters(columnTypeRaw);
 

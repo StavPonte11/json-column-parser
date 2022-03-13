@@ -1,4 +1,4 @@
-import { LIST_LIKE_TYPES, OBJECT_LIKE_TYPES, OPEN_DELIMITERS_MAP } from '../../common/consts.common';
+import { CLOSE_DELIMITERS_MAP, LIST_LIKE_TYPES, OBJECT_LIKE_TYPES, OPEN_DELIMITERS_MAP } from '../../common/consts.common';
 
 export const combineArrays = (
 	array1: Array<unknown>,
@@ -34,23 +34,36 @@ export const replaceOpeningDelimiters = (columnTypeRaw: string): string => {
 export const replaceClosingDelimiter = (
 	columnTypeWithOpeningBrackets: string
 ): string => {
+
+	const throwError = () => {throw new SyntaxError('Number of opening delimiters is greater than closing');};
 	const openingBracketsArray: Array<string> = [];
 
-	return columnTypeWithOpeningBrackets
+	const columnTypeWithClosingBrackets = columnTypeWithOpeningBrackets
 		.split('') // Create array of chars
 		.map((char: string) => {
-			if (char === '[' || char === '{') {
+			if (char in OPEN_DELIMITERS_MAP) {
 				openingBracketsArray.push(char); // Add to opening brackets stack
-			} else if (char === '>') {
+			} else if (char in CLOSE_DELIMITERS_MAP) {
 				// Closing bracket
 				const openingBracket = openingBracketsArray.pop();
+
+				if (!openingBracket) {
+					throwError();
+				}
 				// Override the current char to the closing bracket
-				char = openingBracket === '[' ? ']' : openingBracket === '{' ? '}' : '';
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				char = OPEN_DELIMITERS_MAP[openingBracket as keyof typeof OPEN_DELIMITERS_MAP];
 			}
 
 			return char;
 		})
 		.join(''); // Join back to string
+	
+	if (openingBracketsArray.length) {
+		throwError();
+	}
+
+	return columnTypeWithClosingBrackets;
 };
 
 /**

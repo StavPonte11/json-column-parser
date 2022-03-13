@@ -64,43 +64,42 @@ export const wrapWithQuotes = (columnTypeWithBrackets: string): string => column
 	.map((field: string) =>
 		field
 			.split(':') // Split by values
-			.map((schemaShard: string) => {
-				const { length } = schemaShard;
-				const firstValidStartCharIndex =
-				schemaShard.match('[a-zA-Z-_:]')?.index;
-				const firstEndingBracketsIndex = schemaShard.match(/(\}|])/)?.index;
+			.map((columnTypeShard: string) => {
+				const { length } = columnTypeShard;
+				const firstValidStartCharIndex = columnTypeShard.match('[a-zA-Z-_:]')?.index;
+				const firstEndingBracketsIndex = columnTypeShard.match(/(\}|])/)?.index;
 
 				if (
-					(schemaShard[0] === '{' || schemaShard[0] === '[') &&
-				(schemaShard[length - 1] === '}' || schemaShard[length - 1] === ']')
+					(columnTypeShard[0] === '{' || columnTypeShard[0] === '[') &&
+				(columnTypeShard[length - 1] === '}' || columnTypeShard[length - 1] === ']')
 				) {
 				// Both starts and ends with brackets
-					return `${schemaShard.slice(
+					return `${columnTypeShard.slice(
 						0,
 						firstValidStartCharIndex
-					)}"${schemaShard.slice(
+					)}"${columnTypeShard.slice(
 						firstValidStartCharIndex,
 						firstEndingBracketsIndex
-					)}"${schemaShard.slice(firstEndingBracketsIndex, length)}`;
-				} else if (schemaShard[0] === '{' || schemaShard[0] === '[') {
+					)}"${columnTypeShard.slice(firstEndingBracketsIndex, length)}`;
+				} else if (columnTypeShard[0] === '{' || columnTypeShard[0] === '[') {
 				// Only starts with bracket
-					return `${schemaShard.slice(
+					return `${columnTypeShard.slice(
 						0,
 						firstValidStartCharIndex
-					)}"${schemaShard.slice(firstValidStartCharIndex, length)}"`;
+					)}"${columnTypeShard.slice(firstValidStartCharIndex, length)}"`;
 				} else if (
-					schemaShard[length - 1] === '}' ||
-				schemaShard[length - 1] === ']'
+					columnTypeShard[length - 1] === '}' ||
+				columnTypeShard[length - 1] === ']'
 				) {
 				// Only ends with brackets
-					return `${schemaShard.slice(
+					return `"${columnTypeShard.slice(
 						0,
 						firstEndingBracketsIndex
-					)}"${schemaShard.slice(firstEndingBracketsIndex, length)}"`;
+					)}"${columnTypeShard.slice(firstEndingBracketsIndex, length)}`;
 				}
 
-				return `"${schemaShard}"`;
+				return `"${columnTypeShard}"`;
 			})
 			.join(':')
 	)
-	.join(''); // Join back to string
+	.join(','); // Join back to string

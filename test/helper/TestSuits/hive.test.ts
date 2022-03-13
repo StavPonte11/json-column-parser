@@ -1,10 +1,12 @@
 import { hiveOpeningDelimitersTestExpectations } from '../TestsExpectations/OpeningDelimiters';
-import { hiveColumnsToTest } from '../testSubjects';
 import {
 	replaceOpeningDelimiters,
 	replaceClosingDelimiter
 } from '../../../src/utils/helpers.util';
 import { hiveClosingDelimitersTestExpectations } from '../TestsExpectations/ClosingDelimiters';
+import { wrapWithQuotes } from '../../../src/utils/helpers.util';
+import { hiveColumnsToTest } from '../../testSubjects';
+import { hiveWrapWithQuotesTestExpectations } from '../TestsExpectations/WrapWithQuotes';
 describe('Hive opening delimiters tests', () => {
 	it('Simple object', () => {
 		const response = replaceOpeningDelimiters(hiveColumnsToTest.simpleObject);
@@ -121,6 +123,61 @@ describe('Hive closing delimiters tests', () => {
 			expect(response).toEqual(
 				hiveClosingDelimitersTestExpectations.multiNested3
 			);
+		});
+	});
+});
+
+describe('Hive wrap with quotes tests', () => {
+	it('Simple object', () => {
+		const response = wrapWithQuotes(
+			hiveClosingDelimitersTestExpectations.simpleObject
+		);
+		expect(response).toEqual(hiveWrapWithQuotesTestExpectations.simpleObject);
+	});
+	it('Simple list', () => {
+		const response = wrapWithQuotes(
+			hiveClosingDelimitersTestExpectations.simpleList
+		);
+		expect(response).toEqual(hiveWrapWithQuotesTestExpectations.simpleList);
+	});
+
+	it('Multiple Values Object', () => {
+		const response = wrapWithQuotes(
+			hiveClosingDelimitersTestExpectations.multipleValuesObject
+		);
+		expect(response).toEqual(
+			hiveWrapWithQuotesTestExpectations.multipleValuesObject
+		);
+	});
+	it('Multiple Values List', () => {
+		const response = wrapWithQuotes(
+			hiveClosingDelimitersTestExpectations.multipleValuesList
+		);
+		expect(response).toEqual(
+			hiveWrapWithQuotesTestExpectations.multipleValuesList
+		);
+	});
+
+	describe('MultiNested', () => {
+		it('MultiNested1', () => {
+			const response = wrapWithQuotes(
+				hiveClosingDelimitersTestExpectations.multiNested1
+			);
+			expect(response).toEqual(hiveWrapWithQuotesTestExpectations.multiNested1);
+		});
+
+		it('MultiNested2', () => {
+			const response = wrapWithQuotes(
+				hiveClosingDelimitersTestExpectations.multiNested2
+			);
+			expect(response).toEqual(hiveWrapWithQuotesTestExpectations.multiNested2);
+		});
+
+		it('MultiNested3', () => {
+			const response = wrapWithQuotes(
+				hiveClosingDelimitersTestExpectations.multiNested3
+			);
+			expect(response).toEqual(hiveWrapWithQuotesTestExpectations.multiNested3);
 		});
 	});
 });

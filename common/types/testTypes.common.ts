@@ -1,3 +1,6 @@
+import { JSON } from './type.common';
+import { ChangeTypeOfKeys } from './utils';
+
 export type TestSuitsType = {
 	simpleObject: string
 	simpleList: string
@@ -7,6 +10,8 @@ export type TestSuitsType = {
 	multiNested2: string,
 	multiNested3: string,
 };
+
+export type TestSuitsTypeParse = ChangeTypeOfKeys<TestSuitsType, keyof TestSuitsType, JSON | Array<unknown>>
 
 export type TestExpectations = {
 	openingDelimiters: {

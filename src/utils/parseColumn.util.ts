@@ -47,7 +47,7 @@ const parseColumnType = (columnType: string): string | JSON => {
  * @param columnTypeRaw: The formatted column type needed to be parsed
  * @returns: A json representation of the column type
  */
-const handleComplicatedColumnType = (columnTypeRaw: string): any => {
+const handleComplicatedColumnType = (columnTypeRaw: string): JSON => {
 	// Replace all opening brackets
 	let columnTypeToJson = replaceOpeningDelimiters(columnTypeRaw);
 

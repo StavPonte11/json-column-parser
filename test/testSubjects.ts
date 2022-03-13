@@ -1,4 +1,4 @@
-import { TestSuitsType } from '../../common/types/testTypes.common';
+import { TestSuitsType } from '../common/types/testTypes.common';
 
 const hiveColumnsToTest: TestSuitsType = {
 	simpleObject: 'struct<name:string>',
@@ -7,11 +7,11 @@ const hiveColumnsToTest: TestSuitsType = {
 	multipleValuesObject: 'struct<name:string,id:string,age:int>',
 	multipleValuesList: 'array<struct<name:string,id:string,age:int>>',
 	multiNested1:
-		'struct<name:string,id:string,is_athlete:boolean,class:struct<major:string,average:int>>',
+		'struct<name:string,id:string,is_athlete:boolean,class:struct<major:string,average:double>>',
 	multiNested2:
 		'array<struct<amount:bigint,product:struct<product_id:string,product_name:string,template:struct<code:string,currency:string>>,color:string>>',
 	multiNested3:
-		'array<student:struct<name:string,id:string,subjects:array<struct<sub_name:string,sub_id:bigint>>>,supply:struct<amount:bigint,product:struct<product_id:string,product_name:string,template:struct<code:string,currency:string>>,color:string>>'
+		'array<struct<student:struct<name:string,id:string,subjects:array<struct<sub_name:string,sub_id:bigint>>>,supply:struct<amount:bigint,product:struct<product_id:string,product_name:string,template:struct<code:string,currency:string>>,color:string>>>'
 };
 
 export { hiveColumnsToTest };

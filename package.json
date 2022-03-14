@@ -2,9 +2,9 @@
   "name": "json-column-parser",
   "version": "1.0.0",
   "description": "JSON parser for several data sources columns",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production esbuild src/index.ts --bundle --platform=node --outfile=build.js",
+    "build": "cross-env NODE_ENV=production esbuild src/index.js --bundle --platform=node --outfile=build.js",
     "test:env": "cross-env NODE_ENV=test",
     "test": "npm run test:env && jest",
     "test:watch": "npm run test:env && jest --watch",

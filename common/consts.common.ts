@@ -13,7 +13,7 @@ export const CLOSE_DELIMITERS_MAP = {
 	'}': '{'
 };
 
-const SUPPORTED_TYPES: SupportedType = {
+export const SUPPORTED_TYPES: SupportedType = {
 	[DataSources.Hive]: ['array', 'struct'],
 	[DataSources.Presto]: ['array', 'row'],
 	[DataSources.Default]: ['array', 'struct']

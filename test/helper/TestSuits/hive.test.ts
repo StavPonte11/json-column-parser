@@ -150,7 +150,7 @@ describe('Hive closing delimiters tests', () => {
 				replaceClosingDelimiter(hiveOpeningDelimitersTestExpectations.invalid1);
 				expect(true).toBeFalsy();
 			} catch (error) {
-				expect((error as any).message).toEqual('Number of opening delimiters is greater than closing');
+				expect((error as SyntaxError).message).toEqual('Number of opening delimiters is greater than closing');
 
 			}
 		});

@@ -4,13 +4,14 @@
   "description": "JSON parser for several data sources columns",
   "main": "src/index.ts",
   "scripts": {
-    "build": "cross-env NODE_ENV=production esbuild src/index.ts --bundle --platform=node",
+    "build": "cross-env NODE_ENV=production esbuild src/index.ts --bundle --platform=node --outfile=build.js",
     "test:env": "cross-env NODE_ENV=test",
     "test": "npm run test:env && jest",
     "test:watch": "npm run test:env && jest --watch",
     "test:lint": "npm run test:env && eslint . --ignore-path .gitignore",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+	"prepublish": "npm run test && npm run lint:fix"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "json",
     "atlas",
     "parser",
+	"parse",
     "column",
     "hive",
     "presto",

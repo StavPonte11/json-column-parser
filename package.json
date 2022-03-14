@@ -10,7 +10,7 @@
     "test:watch": "npm run test:env && jest --watch",
     "test:lint": "npm run test:env && eslint . --ignore-path .gitignore",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint:fix": "eslint --fix . --ignore-path .gitignore",
 	"prepublish": "npm run test && npm run lint:fix"
   },
   "repository": {

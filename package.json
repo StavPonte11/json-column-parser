@@ -12,8 +12,8 @@
     "test:lint": "npm run test:env && eslint . --ignore-path .gitignore",
     "lint": "eslint .",
     "lint:fix": "eslint --fix . --ignore-path .gitignore",
-	"prepare": "npm run build",
-	"prepublish": "npm run test && npm run lint:fix"
+    "prepare": "npm run build",
+    "prepublish": "npm run test && npm run lint:fix"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "json",
     "atlas",
     "parser",
-	"parse",
+    "parse",
     "column",
     "hive",
     "presto",

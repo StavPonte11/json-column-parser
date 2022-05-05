@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/StavPonte11/json-column-parser#readme",
   "devDependencies": {
-    "@babel/core": "^7.17.5",
+    "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
@@ -52,7 +52,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.10.0",
     "jest": "^27.5.1",
-    "ts-jest": "^27.1.3",
+    "ts-jest": "^27.1.4",
     "typescript": "^4.5.5"
   },
   "dependencies": {

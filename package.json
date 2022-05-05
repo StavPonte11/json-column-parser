@@ -1,6 +1,6 @@
 {
   "name": "json-column-parser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JSON parser for several big data sources formatted columns",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
@@ -50,7 +50,6 @@
     "babel": "^6.23.0",
     "babel-plugin-wildcard": "^7.0.0",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.14.25",
     "eslint": "^8.10.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.3",

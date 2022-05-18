@@ -9,11 +9,11 @@ export type ParsedColumn = {
 
 export type JSONType = string | number | boolean | JSONObject | JSONArray;
 
-interface JSONObject {
-	[x: string]: JSONType;
-}
+export type JSONObject = {
+	[x: string]: JSONType
+};
 
-type JSONArray = Array<JSONType>;
+export type JSONArray = Array<JSONType>;
 
 export type RawColumn = {
 	name: string,

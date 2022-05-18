@@ -7,7 +7,13 @@ export type ParsedColumn = {
 	colDescription: string | undefined
 };
 
-export type JSONType = Record<string, unknown>;
+export type JSONType = string | number | boolean | JSONObject | JSONArray;
+
+interface JSONObject {
+	[x: string]: JSONType;
+}
+
+type JSONArray = Array<JSONType>;
 
 export type RawColumn = {
 	name: string,

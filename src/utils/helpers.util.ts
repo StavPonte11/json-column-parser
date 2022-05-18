@@ -67,7 +67,6 @@ export const replaceClosingDelimiter = (
 };
 
 /**
- * TODO: Add test
  * Wrap fields name and values with quotations for JSON parsing
  * @param columnTypeWithBrackets: Column type with both opening and closed brackets
  * @returns: Returns column type with quotations marks on fields

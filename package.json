@@ -1,6 +1,6 @@
 {
   "name": "json-column-parser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "JSON parser for several big data sources formatted columns",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",

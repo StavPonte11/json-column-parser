@@ -10,13 +10,14 @@ import {
 } from './helpers.util';
 
 /**
- * OPTIONAL
  * Map and parse the column from one of the supported formats to json
  * @param columns: Columns array to parse
  * @returns Array: Array of json columns
  */
-export const mapColumns = (columns: Array<RawColumn>): Array<ParsedColumn> => {
-	return columns.map((column: RawColumn) => parseColumn(column));
+export const parseColumns = (
+	columns: Array<RawColumn>
+): Array<ParsedColumn> => {
+	return columns.map((column: RawColumn) => _parseColumn(column));
 };
 
 /**
@@ -24,7 +25,7 @@ export const mapColumns = (columns: Array<RawColumn>): Array<ParsedColumn> => {
  * @param column   : A raw column object
  * @returns Column : A parsed column object
  */
-const parseColumn = (column: RawColumn): ParsedColumn => {
+const _parseColumn = (column: RawColumn): ParsedColumn => {
 	const parsedColumnType = parseColumnType(column.type);
 	return {
 		colName: column.name,
@@ -34,7 +35,7 @@ const parseColumn = (column: RawColumn): ParsedColumn => {
 };
 
 /**
- *
+ * Parse the string formatted column type to json (or string if simple type)
  * @param columnType : A string representation of the column in the supported format
  * @returns The parsed column type => <struct to {}, <array to []...
  */

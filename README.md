@@ -24,6 +24,7 @@ npm install --save json-column-parser
 import { parser, types } from "json-column-parser";
 
 // Parse one or more columns
+// The nestedColumn used is the one from the example 	above
 const parsed = parser.parseColumns([
   { name: "test_column", type: nestedColumn, description: "test_description" },
 ]);
